@@ -10,34 +10,44 @@
 <div class="container">
     <div class="card">
         <h1>Giải hệ phương trình</h1>
-        <p class="subtitle">Nhập các hệ số của hệ phương trình bậc nhất 2 ẩn</p>
+        <p class="subtitle">Nhập hệ số và chọn phép toán giữa x và y</p>
 
         <div class="equation">
             <span class="label">Phương trình 1:</span>
             <input type="number" id="a1" placeholder="a₁" step="any">
-            <span>x +</span>
+            <span class="var">x</span>
+            <select id="op1" class="op-select">
+                <option value="+">+</option>
+                <option value="-">−</option>
+                <option value="*">×</option>
+                <option value="/">÷</option>
+            </select>
             <input type="number" id="b1" placeholder="b₁" step="any">
-            <span>y =</span>
+            <span class="var">y</span>
+            <span class="eq">=</span>
             <input type="number" id="c1" placeholder="c₁" step="any">
         </div>
 
         <div class="equation">
             <span class="label">Phương trình 2:</span>
             <input type="number" id="a2" placeholder="a₂" step="any">
-            <span>x +</span>
+            <span class="var">x</span>
+            <select id="op2" class="op-select">
+                <option value="+">+</option>
+                <option value="-">−</option>
+                <option value="*">×</option>
+                <option value="/">÷</option>
+            </select>
             <input type="number" id="b2" placeholder="b₂" step="any">
-            <span>y =</span>
+            <span class="var">y</span>
+            <span class="eq">=</span>
             <input type="number" id="c2" placeholder="c₂" step="any">
         </div>
 
-        <div class="operator-section">
-            <label for="operator">Chọn phép toán để giải:</label>
-            <select id="operator">
-                <option value="+">Cộng (+)</option>
-                <option value="-">Trừ (−)</option>
-                <option value="*">Nhân (×)</option>
-                <option value="/">Chia (÷)</option>
-            </select>
+        <div class="preview" id="preview">
+            <div class="preview-title">📝 Hệ phương trình của bạn:</div>
+            <div class="preview-eq" id="preview1">— x — y = —</div>
+            <div class="preview-eq" id="preview2">— x — y = —</div>
         </div>
 
         <div class="buttons">
