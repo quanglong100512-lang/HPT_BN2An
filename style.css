@@ -11,7 +11,7 @@ body {
 }
 
 .container {
-    max-width: 650px;
+    max-width: 700px;
     margin: 30px auto;
     padding: 20px;
 }
@@ -38,13 +38,14 @@ h1 {
     margin-bottom: 25px;
 }
 
+/* ===== Phương trình ===== */
 .equation {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 6px;
     margin-bottom: 15px;
-    padding: 12px;
+    padding: 14px 12px;
     background: #f7faff;
     border-radius: 12px;
     border: 1px solid #e0ecff;
@@ -53,13 +54,13 @@ h1 {
 .equation .label {
     font-weight: bold;
     color: #1769e0;
-    min-width: 110px;
+    min-width: 105px;
     font-size: 14px;
 }
 
 .equation input {
-    width: 70px;
-    padding: 8px 10px;
+    width: 65px;
+    padding: 8px 6px;
     border: 1px solid #cbd8ee;
     border-radius: 8px;
     font-size: 15px;
@@ -73,41 +74,75 @@ h1 {
     box-shadow: 0 0 0 3px rgba(23, 105, 224, 0.15);
 }
 
-.operator-section {
-    margin: 20px 0;
-    padding: 12px;
-    background: #eef5ff;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex-wrap: wrap;
-}
-
-.operator-section label {
+.equation .var {
+    font-size: 17px;
     font-weight: bold;
     color: #1769e0;
-    font-size: 14px;
+    font-style: italic;
+    padding: 0 2px;
 }
 
-.operator-section select {
-    flex: 1;
-    min-width: 150px;
-    padding: 9px 12px;
-    border: 1px solid #cbd8ee;
+.equation .eq {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    padding: 0 4px;
+}
+
+/* ===== Dropdown phép toán ===== */
+.op-select {
+    width: 55px;
+    padding: 8px 4px;
+    border: 2px solid #1769e0;
     border-radius: 8px;
-    font-size: 15px;
-    background: white;
+    font-size: 16px;
+    font-weight: bold;
+    color: #1769e0;
+    background: #eef5ff;
+    text-align: center;
     cursor: pointer;
     outline: none;
-    transition: border-color 0.2s, box-shadow 0.2s;
+    transition: all 0.2s;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-align-last: center;
+    padding-right: 4px;
 }
 
-.operator-section select:focus {
-    border-color: #1769e0;
-    box-shadow: 0 0 0 3px rgba(23, 105, 224, 0.15);
+.op-select:hover {
+    background: #dbe9ff;
 }
 
+.op-select:focus {
+    box-shadow: 0 0 0 3px rgba(23, 105, 224, 0.25);
+}
+
+/* ===== Preview ===== */
+.preview {
+    margin: 20px 0;
+    padding: 14px 16px;
+    background: linear-gradient(135deg, #eef5ff, #f9fbff);
+    border-radius: 12px;
+    border: 1px dashed #a8c6f0;
+}
+
+.preview-title {
+    font-size: 13px;
+    color: #1769e0;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.preview-eq {
+    font-family: 'Courier New', monospace;
+    font-size: 16px;
+    color: #222;
+    padding: 4px 0;
+    letter-spacing: 0.5px;
+}
+
+/* ===== Buttons ===== */
 .buttons {
     display: flex;
     gap: 12px;
@@ -151,6 +186,7 @@ h1 {
     transform: translateY(-2px);
 }
 
+/* ===== Result ===== */
 .result {
     margin-top: 22px;
     padding: 16px;
@@ -190,4 +226,39 @@ h1 {
 .result .highlight {
     font-size: 18px;
     font-weight: bold;
+}
+
+.result .step-box {
+    background: rgba(255,255,255,0.6);
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin: 10px 0;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    white-space: pre-wrap;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 550px) {
+    .equation {
+        padding: 12px 8px;
+        gap: 4px;
+    }
+    .equation .label {
+        min-width: 100%;
+        margin-bottom: 6px;
+        text-align: center;
+    }
+    .equation input {
+        width: 55px;
+        font-size: 14px;
+    }
+    .op-select {
+        width: 48px;
+        font-size: 15px;
+    }
+    .equation .var,
+    .equation .eq {
+        font-size: 15px;
+    }
 }
